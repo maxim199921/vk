@@ -1,0 +1,265 @@
+{
+  "openapi": "3.0.0",
+  "x-api-id": "user",
+  "info": {
+    "version": "0.0.1",
+    "title": "user"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/"
+    }
+  ],
+  "paths": {
+    "/user": {
+      "get": {
+        "description": "get all users",
+        "tags": [
+          "user"
+        ],
+        "summary": "get all users from db",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "_id": {
+                        "type": "string",
+                        "example": "343434343434343"
+                      },
+                      "id": {
+                        "type": "number",
+                        "example": 232323232
+                      },
+                      "firstname": {
+                        "type": "string",
+                        "example": "max"
+                      },
+                      "lastname": {
+                        "type": "string",
+                        "example": "vasilun"
+                      },
+                      "age": {
+                        "type": "number",
+                        "example": 22
+                      },
+                      "email": {
+                        "type": "string",
+                        "example": "ss@ssw.ru"
+                      },
+                      "__v": {
+                        "type": "number",
+                        "example": 0
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error"
+          }
+        }
+      },
+      "post": {
+        "description": "create new user",
+        "tags": [
+          "user"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number",
+                    "example": 232323232
+                  },
+                  "firstname": {
+                    "type": "string",
+                    "example": "max"
+                  },
+                  "lastname": {
+                    "type": "string",
+                    "example": "vasilun"
+                  },
+                  "age": {
+                    "type": "number",
+                    "example": 22
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "ss@ssw.ru"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "create new user and save in db",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "406": {
+            "description": "error with value form"
+          },
+          "500": {
+            "description": "Error"
+          }
+        }
+      },
+      "put": {
+        "description": "update user",
+        "tags": [
+          "user"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number",
+                    "example": 232323232
+                  },
+                  "firstname": {
+                    "type": "string",
+                    "example": "max"
+                  },
+                  "lastname": {
+                    "type": "string",
+                    "example": "vasilun"
+                  },
+                  "age": {
+                    "type": "number",
+                    "example": 22
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "ss@ssw.ru"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "update user and save in db",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "406": {
+            "description": "error with value form"
+          },
+          "500": {
+            "description": "Error"
+          }
+        }
+      }
+    },
+    "/user/{id}": {
+      "delete": {
+        "description": "delete user by Id",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "id",
+            "schema": {
+              "type": "string",
+              "default": "2323232323"
+            }
+          }
+        ],
+        "summary": "delete user from db",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Error"
+          }
+        }
+      },
+      "get": {
+        "description": "get one user",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "id",
+            "schema": {
+              "type": "string",
+              "default": "2323232323"
+            }
+          }
+        ],
+        "summary": "get one user from db",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string",
+                      "example": "343434343434343"
+                    },
+                    "id": {
+                      "type": "number",
+                      "example": 232323232
+                    },
+                    "firstname": {
+                      "type": "string",
+                      "example": "max"
+                    },
+                    "lastname": {
+                      "type": "string",
+                      "example": "vasilun"
+                    },
+                    "age": {
+                      "type": "number",
+                      "example": 22
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "ss@ssw.ru"
+                    },
+                    "__v": {
+                      "type": "number",
+                      "example": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error"
+          }
+        }
+      }
+    }
+  }
+}

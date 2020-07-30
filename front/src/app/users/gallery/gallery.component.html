@@ -1,0 +1,10 @@
+<div style="background:white;border-radius: 5px;padding: 30px;min-height: 80vh">
+  <input type="file" #addAvatar (change)="onUpload($event)" hidden>
+  <button type="button" class="addButton" mat-stroked-button (click)="addAvatar.click()" style="width: 70%">Add photo</button>
+  <div class="row">
+  <div class="col-3 imageGallery" *ngFor="let image of images" (click)="openPhoto(image)">
+    <button class="cancel" (click)="removeImage(image)"></button>
+    <img src="{{image}}" alt="">
+  </div>
+  </div>
+</div>

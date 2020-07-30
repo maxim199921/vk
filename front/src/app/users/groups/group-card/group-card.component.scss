@@ -1,0 +1,23 @@
+.conversationCard{
+  width: 90%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 5px;
+  word-wrap: break-word;
+  box-shadow: 1px 1px 10px 10px gray;
+  margin-top: 25px;
+  margin-left: 15px;
+
+}
+.avaGroup{
+  background-size: cover;
+  height: 120px;
+  width:120px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}

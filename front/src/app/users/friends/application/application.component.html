@@ -1,0 +1,23 @@
+<div *ngFor="let application of applications" class="row application-frame" style="width: 100%">
+    <div class="col-12 col-sm-2">
+        <div class="application-page-photo">
+          <img [src]="application.avatarPhoto" width="50px" height="50px"
+               style="border-radius: 5px;">
+        </div>
+    </div>
+    <div class="col-12 col-sm-10">
+        <div class="application-page-name">{{application.firstName}} {{application.lastName}}</div>
+        <div class="application-page-country">
+            <span class="application-page-country-title">country:</span>
+            {{application.country}}
+        </div>
+        <div class="row application-page-message-border">
+            <button mat-button class="col-6 application-page-message"
+                    (click)="addToFriend(application)">accept
+            </button>
+            <button mat-button class="col-6 application-page-message"
+                    (click)="cancelFriend(application)">cancel
+            </button>
+        </div>
+    </div>
+</div>

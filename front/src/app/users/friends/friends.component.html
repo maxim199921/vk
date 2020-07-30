@@ -1,0 +1,29 @@
+<div class="friend-page"
+     infiniteScroll
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="50"
+     (scrolled)="onScroll()"
+     [scrollWindow]="false"
+>
+    <div class="container">
+        <div class="row">
+            <mat-tab-group class="col-12">
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <span [matBadge]="friendsLength" matBadgeOverlap="false">all friends</span>
+                    </ng-template>
+                    <app-all-friends #child (friendsLength)="setFriendsLength($event)"
+                                     (deleteFriendsLength)="deleteFriendsLength($event)"></app-all-friends>
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <span [matBadge]="applicationsLength" matBadgeOverlap="false">application</span>
+                    </ng-template>
+                    <app-application #applicationChild (applicationsLength)="setApplicationsLength($event)"
+                                     (deleteApplication)="deleteApplicationsLength($event)"></app-application>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+
+</div>

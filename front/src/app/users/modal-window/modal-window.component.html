@@ -1,0 +1,20 @@
+<div class = 'opened'>
+<h1 mat-dialog-title>Привет {{trololo.firstName}} , что у вас нового? </h1>
+<div mat-dialog-content >
+  <div *ngIf="photo">
+    <img [src] = photo>
+  </div>
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="trololo.content"></textarea>
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick(event)">No Thanks</button>
+  <button mat-button [mat-dialog-close] = 'trololo' cdkFocusInitial>Ok</button>
+  <input type="file" #addAvatar (change)="onUpload($event)" hidden>
+  <button mat-button (click)="addAvatar.click()">Photo</button>
+
+</div>
+
+</div>

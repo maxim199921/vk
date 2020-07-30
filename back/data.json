@@ -1,0 +1,17 @@
+{
+  "id":300568529,
+  "firstname":"maksik",
+  "lastname":"dsjdf",
+  "age":"22",
+  "email":"s@r.ru"
+} //create new userss
+
+{
+  "id":300568529,
+  "firstname":"maksik",
+  "lastname":"dsjdf",
+  "age":"22",
+  "email":"s@r.ru"
+} //update new user
+
+117722586 //delete user by id add to url

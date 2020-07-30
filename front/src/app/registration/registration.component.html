@@ -1,0 +1,86 @@
+<div class="formReg">
+  <h2 style="color: #ffffff;">Registration</h2>
+  <form class='loginForm' novalidate [formGroup]='registerForm'>
+    <div class="row">
+      <div class='emailInput col-md-6'>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" formControlName="email">
+          <mat-error *ngIf="email.touched && email.invalid">
+            please fill email correct
+          </mat-error>
+        </mat-form-field>
+        <div *ngIf="isLoginTaken()" style="color:tomato">
+          email exists
+        </div>
+
+      </div>
+      <div class='firstNameInput col-md-6'>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="First Name" formControlName="firstName">
+          <mat-error *ngIf="firstName.touched && firstName.invalid">
+            please fill your firstName
+          </mat-error>
+        </mat-form-field>
+
+      </div>
+    </div>
+    <div class='lastNameInput'>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Last Name" formControlName="lastName">
+        <mat-error *ngIf="lastName.touched && lastName.invalid">
+          please fill your lastName
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+    <div class='countryName'>
+      <mat-form-field>
+        <mat-select placeholder="Country" formControlName="country">
+          <mat-option value="{{item.name}}" *ngFor="let item of countries">{{item.name}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="country.touched && country.invalid">
+          please fill your country
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+    <div class='ageInput' style="margin-top: 20px">
+      <mat-form-field class="example-full-width">
+        <input matInput cdkAutofill="false" placeholder="Age" type="number" formControlName="age">
+        <mat-error *ngIf="age.touched && age.invalid">
+          please fill your age
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class='passwordInput' style="margin-top: 20px">
+      <mat-form-field class="example-full-width">
+        <input matInput cdkAutofill="false" placeholder="Password" type="password" formControlName="password">
+        <mat-error *ngIf="password.touched && password.invalid">
+          please fill your password, it must be more than 6 characters
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class='confirmPasswordInput' style="margin-top: 20px">
+      <mat-form-field class="example-full-width" style="margin-bottom: 30px">
+        <input matInput placeholder="Confirm Password" type="password" formControlName="confirmPassword">
+        <mat-error *ngIf="confirmPassword.touched && confirmPassword.invalid">
+          please fill your password, it must be more than 6 characters
+        </mat-error>
+        <mat-error *ngIf="confirmPassword.errors && confirmPassword.errors.MatchPassword">
+          passwords do not match ,check the correctness of the data entered
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+  <div class="buttonsReg row">
+    <div class="col-md-6" style="width: 100%">
+      <button mat-raised-button="Submit" class="regBut" [disabled]="registerForm.invalid"
+              (click)="regUser(registerForm.value)">Registration
+      </button>
+    </div>
+    <div class="col-md-6" style="width: 100%">
+      <button mat-raised-button="Submit" class="backToLogin" routerLink="/login">Back to login</button>
+    </div>
+
+  </div>
+</div>

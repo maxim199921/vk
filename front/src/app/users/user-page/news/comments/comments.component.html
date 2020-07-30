@@ -1,0 +1,49 @@
+<mat-card class="example-card" [class.hidden]="toggleComments">
+  <div style="text-align: center" *ngIf = 'commentsArray.length >=3'><button mat-button (click)="showAllComments()">Показать все комментарии</button></div>
+
+  <div class="content row"  style="flex-wrap:nowrap" *ngFor = ' let comment of comments'>
+
+
+  <div class="col-md-1">
+
+    <div class="avatar-comment" [style.backgroundImage]="'url('+ comment.avatarPhoto +')'"></div>
+
+  </div>
+
+  <div class = 'content2 col-md-9'>
+
+    <mat-card-title>{{comment.firstName}} {{comment.lastName}}</mat-card-title>
+
+    <p>{{comment.comment}}</p>
+      <div>
+
+      </div>
+  </div>
+    <div class="col-md-1">
+      <button class="cancel2" (click)="deleteComment(comment._id)"></button>
+    </div>
+
+</div>
+  <mat-divider style="margin-bottom: 20px; height: 2px"></mat-divider>
+<div class="addComment row">
+  <div class="col-1">
+
+    <div class="avatar-comment" [style.backgroundImage]="'url('+ user.avatarPhoto +')'"></div>
+
+  </div>
+  <div class = ' col-9 '>
+
+      <div  id="input" role = textbox contenteditable="true" slot="input" #content></div>
+
+
+
+      </div>
+<div class="col-2" style="display: flex ; align-items: center">
+  <button mat-raised-button (click)="getCommentContent(content)">Add</button>
+</div>
+
+</div>
+
+
+
+</mat-card>

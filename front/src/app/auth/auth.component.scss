@@ -1,0 +1,62 @@
+.formalog {
+  background: #474d5b;
+  border-radius: 6px;
+  padding: 30px;
+  width: 350px;
+  margin: auto;
+  margin-top: 170px;
+  .errorDiv{
+    color:darkred;
+  }
+}
+
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+:host /deep/ mat-form-field {
+  display: block;
+
+  .mat-form-field-underline {
+    background-color: #ffffff !important;
+  }
+
+  &.mat-focused {
+    .mat-form-field-ripple {
+      background-color: #ffffff !important;
+    }
+    .mat-form-field-label {
+      color: #ffffff;
+    }
+  }
+  .mat-form-field-label {
+    color: #ffffff;
+    font-size: 12px;
+  }
+  input{
+    color:#ffffff;
+  }
+
+
+}
+.logIn{
+  margin-top: 10px;
+}
+.register{
+  button{
+    color:#ffffff;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+  -webkit-box-shadow: 0 0 0 30px  #474d5b inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+}

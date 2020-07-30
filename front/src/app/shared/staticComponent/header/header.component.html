@@ -1,0 +1,48 @@
+<div class="main-header">
+<!--  <nav role="navigation">-->
+<!--    <div id="menuToggle">-->
+<!--      <input type="checkbox" />-->
+<!--      <span></span>-->
+<!--      <span></span>-->
+<!--      <span></span>-->
+<!--      <ul  id="menu">-->
+<!--       <div class="ava"></div>-->
+<!--        <div class="mew">-->
+<!--          <div class="avka"></div>-->
+<!--          <ul>-->
+<!--            <li>по</li>-->
+<!--            <li>фывыф</li>-->
+<!--            <li>фвыф</li>-->
+<!--            <li>фывыфвы</li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </nav>-->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-4 main-logo-container">
+                <div class="main-logo"></div>
+            </div>
+            <div *ngIf="show()" class="col-9 col-sm-6">
+                <div class="container-search">
+                    <mat-form-field class="example-full-width search-inp">
+                        <input type="text" autocomplete="off" matInput #searchInp
+                               (input)="searchInp.value?searchBegin(searchInp.value):null" placeholder="search">
+                    </mat-form-field>
+                    <button class="search-button"
+                            (click)="searchInp.value?searchBegin(searchInp.value):null"></button>
+                </div>
+            </div>
+            <div *ngIf="show()" class="col-3 col-sm-2">
+                <div class="container-settings">
+                    <button mat-raised-button [matMenuTriggerFor]="beforeMenu">settings</button>
+                    <mat-menu #beforeMenu="matMenu" xPosition="before">
+                        <button mat-menu-item routerLink="main/settings">Edit</button>
+                        <button mat-menu-item (click)="logout()">Logout</button>
+                    </mat-menu>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

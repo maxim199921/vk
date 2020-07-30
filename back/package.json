@@ -1,0 +1,29 @@
+{
+  "name": "task5",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "docs-gen": "oas generate swagger.json > swagger.json.tmp &&  swagger.json.tmp swagger.json && type swagger.json.tmp > swagger.json && del swagger.json.tmp"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.5",
+    "body-parser": "^1.17.1",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-validator": "^3.1.2",
+    "express-ws": "^4.0.0",
+    "http-errors": "~1.6.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.18",
+    "morgan": "~1.9.0",
+    "multer": "^1.4.1",
+    "oas": "^0.8.13",
+    "pug": "2.0.0-beta11",
+    "socket.io": "^2.0.4",
+    "swagger-ui-express": "^4.0.2"
+  }
+}

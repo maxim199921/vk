@@ -1,0 +1,117 @@
+.hidden{
+  display: none;
+}
+
+.avatar-comment {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+mat-card{
+  margin-top: -3px;
+  border-top : none;
+  border-radius: 0;
+}
+.content{
+  word-wrap: break-word;
+  flex-wrap: nowrap;
+  display: flex;
+  font-size: 13px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  mat-card-title{
+    font-size: 14px;
+  }
+  .content2{
+    margin-left: 20px;
+    p{
+      margin: 0;
+    }
+  }
+
+}
+.addComment{
+  word-wrap: break-word;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content:space-between;
+  font-size: 13px;
+  margin-top: 25px;
+  padding: 10px;
+  #input {
+    margin-top: 5px;
+    border:1px solid #dadce1;
+    outline: none;
+    word-wrap: break-spaces;
+    border-radius: 15px;
+    padding: 7px 90px 7px 13px;
+    width: 100%;
+    font-size: 13px;
+    margin-left: 15px;
+  }
+
+  .mat-raised-button{
+    min-width: 40px;
+    padding: 0;
+    line-height: 30px;
+  }
+
+
+  #input_container{
+    margin-left: 15px;
+  }
+}
+@media only screen and (max-width: 765px) {
+  .cancel2{
+    height: 20px;
+    width: 20px;
+    margin-left: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 0.3;
+    background: url("../../../../../assets/images/a8897b349d.svg");
+    background-size: cover;
+  }
+  .content2 {
+    width: 80%;
+    margin-left: -20px !important;
+
+    p {
+      margin: 0;
+    }
+  }
+  .avatar-comment {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+  .addComment{
+
+    #input {
+      margin-top: 5px;
+      border: 1px solid #dadce1;
+      outline: none;
+      word-wrap: break-spaces;
+      border-radius: 15px;
+      padding: 0;
+      width: 100%;
+      font-size: 13px;
+      margin-left: 15px;
+    }
+    .mat-raised-button{
+      min-width: 30px;
+      padding: 0;
+      line-height: 20px;
+    }
+  }
+}
+

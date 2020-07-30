@@ -1,0 +1,38 @@
+<div class="search-page">
+  <div class="container">
+    <form [formGroup]="form">
+      <div class="groupName">
+        <label for="nameGroup" style="font-weight: 600;font-family: cursive;">Введите название беседы:</label>
+        <input type="text" id="nameGroup" formControlName="name" style="border-radius: 5px;
+    outline: none;
+    padding: 5px;
+    border: 1px solid black;
+    margin-left: 10px;">
+      </div>
+    <div class="row allUsers">
+      <div class="col-12">
+            <div  class="row search-frame" style="width: 100%" formArrayName="friends" *ngFor="let order of form.controls.friends.controls; let i = index" >
+                        <div class="col-4">
+                          <div class="friend-page-photo" [style.backgroundImage]="'url('+ friends[i].avatarPhoto +')'"></div>
+                        </div>
+                        <div class="col-6">
+                          <div class="search-page-name"
+                             >{{friends[i].firstName}} {{friends[i].lastName}}</div>
+                        </div>
+                    <div class="col-md-2">
+                      <label class=" search-page-message container1">
+                        <input type="checkbox"  [formControlName]="i">
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                      </div>
+
+      </div>
+    </div>
+    </form>
+    <div class="col-md-12" style="text-align: center; margin-top: 15px;">
+      <div *ngIf = '!form.valid' style="color:orangered">To create group chose more then 1 person</div>
+      <button mat-raised-button (click)="submit(form.value) " [mat-dialog-close] = 'form.value' [disabled]="!form.valid"> Create Group</button>
+    </div>
+  </div>
+</div>

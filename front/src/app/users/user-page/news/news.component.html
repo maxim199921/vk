@@ -1,0 +1,9 @@
+<div class="content" *ngFor = 'let u of piceOfNews'>
+
+
+  <app-posts [posts]="piceOfNews" [post] = 'u'></app-posts>
+  <app-comments  [postId] = 'u._id'  [commentsArray]= 'u.comments' ></app-comments>
+
+
+</div>
+

@@ -1,0 +1,28 @@
+<div *ngFor="let friend of friends" class="row friend-frame" style="width: 100%">
+    <div class="col-12 col-sm-2">
+        <div class="friend-page-photo" (click)="toProfile(friend._id)">
+          <img [src]="friend.avatarPhoto" width="50px" height="50px"
+               style="border-radius: 5px;">
+        </div>
+    </div>
+    <div class="col-10 col-sm-9">
+        <div class="friend-page-name" (click)="toProfile(friend._id)">{{friend.firstName}} {{friend.lastName}}</div>
+        <div class="friend-page-country">
+            <span class="friend-page-country-title">country:</span>
+            {{friend.country}}
+        </div>
+        <div class="friend-page-message-border">
+            <button mat-button class="friend-page-message" (click)="entryToRoom(friend)">write</button>
+        </div>
+    </div>
+    <div class="col-2 col-sm-1 friend-page-modal">
+        <button mat-icon-button [matMenuTriggerFor]="beforeMenu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <button mat-menu-item (click)="openDialog(friend._id)">
+                delete friend
+            </button>
+        </mat-menu>
+    </div>
+</div>

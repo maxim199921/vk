@@ -1,0 +1,43 @@
+.inform{
+  background: #fffefe;
+  border-radius: 5px ;
+  padding: 20px;
+  box-shadow: 5px 10px 15px #c0c0c0;
+  mat-list{
+    display: none;
+  }
+  .active{
+    display: block;
+    transition: width 1s;
+  }
+  button{
+    width: 100%;
+    border:none
+  }
+
+
+}
+.topName{
+  display : flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.viewPageAvatar{
+
+}
+.usersPage{
+  width: 80%;
+}
+@media only screen and (max-width: 768px) {
+  .viewPageAvatar{
+    background-size: cover;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+}
+
+

@@ -1,0 +1,38 @@
+.application-frame {
+  min-height: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 5px #c0c0c0;
+}
+
+.application-page-photo {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.application-page-name{
+  margin-top: 14px;
+  margin-bottom: 3px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.application-page-country {
+  font-size: 12px;
+}
+
+.application-page-country-title {
+  opacity: 0.5;
+}
+
+.application-page-modal {
+  margin-top: 30px;
+}
+
+.application-page-message {
+  width: 100%;
+}
+
+.application-page-message-border {
+  border-top: 1px solid silver;
+}

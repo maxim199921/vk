@@ -1,0 +1,21 @@
+<div class="usersPage">
+  <div class="inform">
+
+    <div class="topName">
+      <div class="userPageAvatar">
+        <img [src]=photo alt="" class = 'avka'>
+      </div>
+      <div><h3>{{user.firstName}} {{user.lastName}}</h3></div>
+      <div style="font-size: 12px">online</div>
+    </div>
+    <mat-divider style="margin-top: 20px"></mat-divider>
+    <button  mat-stroked-button (click)="toggle()">See more...</button>
+    <mat-list [class.active] = 'active' >
+      <mat-list-item> <span style="font-size: 14px">Age</span> : <span style="font-size: 13px">{{user.age}}</span> </mat-list-item>
+      <mat-list-item> <span style="font-size: 14px">County</span> : <span style="font-size: 13px"> {{user.country}}</span> </mat-list-item>
+      <mat-list-item> <span style="font-size: 14px">Email</span> : <span style="font-size: 13px">{{user.email}}</span> </mat-list-item>
+    </mat-list>
+  </div>
+  <app-news [piceOfNews] = 'posts'></app-news>
+
+</div>

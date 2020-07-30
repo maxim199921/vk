@@ -1,0 +1,10 @@
+
+<div class="content" *ngFor = 'let u of piceOfNews'>
+
+
+  <profile-posts [posts]="piceOfNews" [post] = 'u'></profile-posts>
+  <profile-comments  [postId] = 'u._id' [profileUser] = profileUser  [commentsArray]= 'u.comments' ></profile-comments>
+
+
+</div>
+

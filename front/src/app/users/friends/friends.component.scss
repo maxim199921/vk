@@ -1,0 +1,29 @@
+.friend-page {
+  background-color: #ffffff;
+  border-radius: 5px;
+  height: 80vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+:host /deep/ .mat-ink-bar {
+  background-color: #000000 !important;
+}
+
+:host /deep/ .mat-tab-body-content {
+  overflow: hidden !important;
+}
+
+.friend-page::-webkit-scrollbar {
+  width: 12px;
+}
+
+.friend-page::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+.friend-page::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}

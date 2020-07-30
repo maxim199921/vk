@@ -1,0 +1,12 @@
+<div class="containerGroups"
+     infiniteScroll
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="50"
+     (scrolled)="onScroll()"
+     [scrollWindow]="false">
+<div class="groups row" >
+  <div class="col-md-6" *ngFor="let conversatio of conversations">
+    <app-group-card [conversation] ="conversatio" routerLink="/main/chat" ></app-group-card>
+  </div>
+</div>
+</div>

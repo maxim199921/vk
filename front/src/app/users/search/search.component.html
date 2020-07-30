@@ -1,0 +1,48 @@
+<div class="search-page"
+     infiniteScroll
+     #scrollMe
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="50"
+     (scrolled)="onScroll()"
+     [scrollWindow]="false">
+    <h2 *ngIf="filterUsersDataCheck" class="search-page-null">search returned no results try again</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div *ngFor="let users of filterUsersData" class="row search-frame" style="width: 100%">
+                    <div class="col-12 col-sm-2">
+                        <div class="search-page-photo"
+                             (click)="toProfile(users._id)">
+                          <img [src]="users.avatarPhoto" width="50px" height="50px"
+                               style="border-radius: 5px;">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-10">
+                        <div class="search-page-name"
+                             (click)="toProfile(users._id)">{{users.firstName}} {{users.lastName}}
+                        </div>
+                        <div class="search-page-country">
+                            <span class="search-page-country-title">country:</span>
+                            {{users.country}}
+                        </div>
+                        <div class="row">
+                            <div class="col-6 search-page-message-border">
+                                <button *ngIf="!users.isFriend" mat-button class="search-page-message"
+                                        (click)="addApplication(users)">add to friend
+                                </button>
+                                <button *ngIf="users.isFriend" mat-button class="search-page-message"
+                                        [disabled]="users.isFriend">you have this friend
+                                </button>
+                            </div>
+                            <div class="col-6 search-page-message-border">
+                                <button mat-button class="search-page-message"
+                                        (click)="entryToRoom(users)">write
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image" [style.backgroundImage]="'url('+ post.user.avatarPhoto +')'"></div>
+    <mat-card-title>{{post.user.firstName}} {{post.user.lastName}}</mat-card-title>
+    <mat-card-subtitle>{{post.date | date:'medium' }} </mat-card-subtitle>
+  </mat-card-header>
+  <div class="photo">
+    <div *ngIf="post.postPhoto" class="photoContainer">
+      <img mat-card-image [src] = post.postPhoto  style="object-fit: cover">
+    </div>
+    <mat-card-content>
+      <div>
+        {{post.content}}
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button  color="warn" (click)="addLike(post._id,counter )">
+        <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+        <span #counter>{{post.likes.length}}</span>
+      </button>
+      <button mat-button (click)="trigger(post._id)">Add comment</button>
+    </mat-card-actions>
+
+  </div>
+
+
+</mat-card>

@@ -1,0 +1,56 @@
+
+<mat-card class="example-card sidebarMain">
+  <div style="padding-top: 20px;">
+  <img mat-card-image [src]=photo >
+  <div *ngIf = 'addtoFriend'>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item >
+        <mat-icon>voicemail</mat-icon>
+        <span>Add post</span>
+      </button>
+
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+    <button mat-button style="width: 70%" (click)="addFriend()" [disabled]="isFriend">Добавить друга</button>
+  </div>
+    <div *ngIf = '!addtoFriend'>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="createGroup()">
+          <span>Add to group</span>
+        </button>
+        <button mat-menu-item (click)="openDialog()">
+          <span>Add post</span>
+        </button>
+      </mat-menu>
+      <input type="file" #addAvatar (change)="onUpload($event)" hidden>
+      <button type="button" mat-button (click)="addAvatar.click()" style="width: 70%">edit avatar</button>
+    </div>
+  </div>
+  <mat-card-actions>
+    <button  mat-stroked-button routerLink="/main/myPage" routerLinkActive="active">My page</button>
+    <button  mat-stroked-button
+             [matBadge]="countMessage!==0?countMessage:null" routerLink="/main/messages" routerLinkActive="active">My messages</button>
+    <button  mat-stroked-button routerLink="/main/groups" routerLinkActive="active">Groups</button>
+    <button  mat-stroked-button
+             [matBadge]="countNewFriends!==0?countNewFriends:null" routerLink="/main/friends" routerLinkActive="active">Friends</button>
+    <button  mat-stroked-button routerLink="/main/gallery" routerLinkActive="active">Gallery</button>
+
+
+
+
+
+  </mat-card-actions>
+</mat-card>

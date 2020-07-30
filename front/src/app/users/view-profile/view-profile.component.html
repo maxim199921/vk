@@ -1,0 +1,19 @@
+<div class="usersPage">
+  <div class="inform">
+
+    <div class="topName">
+      <div class="viewPageAvatar" [style.backgroundImage]="'url('+ profile.avatarPhoto +')'"></div>
+      <div><h3>{{profile.firstName }} {{profile.lastName}}</h3></div>
+      <div style="font-size: 12px">online</div>
+    </div>
+    <mat-divider style="margin-top: 20px"></mat-divider>
+    <button  mat-stroked-button (click)="toggle()">See more...</button>
+    <mat-list [class.active] = 'active' >
+      <mat-list-item> <span style="font-size: 14px">Age</span> : <span style="font-size: 13px">{{profile.age}}</span> </mat-list-item>
+      <mat-list-item> <span style="font-size: 14px">County</span> : <span style="font-size: 13px"> {{profile.country}}</span> </mat-list-item>
+      <mat-list-item> <span style="font-size: 14px">Email</span> : <span style="font-size: 13px">{{profile.email}}</span> </mat-list-item>
+    </mat-list>
+  </div>
+  <profile-news [piceOfNews] = 'posts' [profileUser] = profile></profile-news>
+
+</div>
