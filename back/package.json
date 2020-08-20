@@ -7,7 +7,7 @@
     "docs-gen": "oas generate swagger.json > swagger.json.tmp &&  swagger.json.tmp swagger.json && type swagger.json.tmp > swagger.json && del swagger.json.tmp"
   },
   "dependencies": {
-    "bcrypt": "^3.0.8",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.17.1",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.5",
