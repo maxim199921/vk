@@ -24,7 +24,7 @@
     "nodemon": "^2.0.4",
     "oas": "^0.8.13",
     "pug": "2.0.0-beta11",
-    "socket.io": "^2.0.4",
+    "socket.io": "^2.4.0",
     "swagger-ui-express": "^4.0.2"
   }
 }
